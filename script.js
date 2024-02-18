@@ -12,7 +12,7 @@ const scissors = 3;
 // Declare a variable via user prompt for user's selection of rock, paper, or scissors
 
 let playerChoice = prompt('Enter One: Rock, Paper, Scissors').toLowerCase();
-console.log(playerChoice);
+// console.log(playerChoice);
 
 const computerChoice = getComputerChoice();
 
@@ -21,7 +21,7 @@ const computerChoice = getComputerChoice();
 function getComputerChoice() {
 
     let choice = Math.floor(Math.random() * 3) +1;
-    console.log(choice)
+    // console.log(choice)
  
     switch(choice) {
         case 1:
@@ -36,7 +36,26 @@ function getComputerChoice() {
     }
     return choice;
 }
-console.log(computerChoice);
+// console.log(computerChoice);
 
 // Create a function to play a single round of game using the user and computer choices
+
+function playRound() {
+    if (playerChoice === 'rock' && computerChoice === 'scissors') {
+        let winner = console.log('Player wins!');
+    }
+    else if (playerChoice === 'paper' && computerChoice === 'rock') {
+        let winner = console.log('Player wins!');
+    }
+    else if (playerChoice === 'scissors' && computerChoice === 'paper') {
+        let winner = console.log('Player wins!');
+    }
+    else if (playerChoice === computerChoice) {
+        let winner = console.log('Draw!');
+    }
+    else {
+        let winner = console.log('Computer wins!' + " " + computerChoice);
+    }
+}
+
 // Create a function to execute the round 5 times, outputting and tracking the winner and loser of each round
