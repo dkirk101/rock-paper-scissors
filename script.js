@@ -3,35 +3,40 @@
     // function should be case insensitive and declare the winner
 // Create a game function to play 5 rounds, keeping track of winner and loser
 
+// Declare variables rock, paper, scissors and assigne 1, 2, and 3
+
+const rock = 1;
+const paper = 2;
+const scissors = 3;
 
 // Declare a variable via user prompt for user's selection of rock, paper, or scissors
 
 let playerChoice = prompt('Enter One: Rock, Paper, Scissors').toLowerCase();
 console.log(playerChoice);
 
-let computerChoice;
+const computerChoice = getComputerChoice();
+
 // Create function for the computer to select either rock, paper, or scissors randomly and is case insensitive
 
 function getComputerChoice() {
 
     let choice = Math.floor(Math.random() * 3) +1;
-    let pick;
-
     console.log(choice)
+ 
+    switch(choice) {
+        case 1:
+            return 'rock'
+        case 2:
+            return 'paper'
+        case 3:
+            return 'scissors'
+        default:
+            return undefined
 
-    if (choice === +1) {
-        let pick = 'rock';
     }
-    else if (choice === +2) {
-        let pick = 'paper';
-    }
-    else {
-        let pick = 'scissors';
-    }
-    console.log(choice);
+    return choice;
 }
-
-getComputerChoice();
+console.log(computerChoice);
 
 // Create a function to play a single round of game using the user and computer choices
 // Create a function to execute the round 5 times, outputting and tracking the winner and loser of each round
