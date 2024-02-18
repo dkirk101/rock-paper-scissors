@@ -5,7 +5,15 @@
 
 
 // Declare a variable via user prompt for user's selection of rock, paper, or scissors
+
+let playerChoice = prompt('Choose One: Rock, Paper, Scissors').toLowerCase();
+
+console.log(playerChoice);
+
 // Validate players selection
+
+// if (playerChoice !== )
+
 // Create function for the computer to select either rock, paper, or scissors randomly and is case insensitive
 // Create a function to play a single round of game using the user and computer computer choices
 // Create afunction to execute the round 5 times, outputting and tracking the winner and loser of each round
