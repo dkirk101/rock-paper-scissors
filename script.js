@@ -58,13 +58,8 @@ function playRound() {
     }
 }
 
-
-
-//playRound(playerChoice, computerChoice);
-
 // Create a function to execute the round 5 times, outputting and tracking the winner and loser of each round
 
 function playGame() {
-    console.log(playRound(playerChoice, computerChoice));
 
-    }
+}
