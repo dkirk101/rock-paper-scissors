@@ -3,25 +3,13 @@
     // function should be case insensitive and declare the winner
 // Create a game function to play 5 rounds, keeping track of winner and loser
 
-// Declare variables rock, paper, scissors and assigne 1, 2, and 3
-
-const rock = 1;
-const paper = 2;
-const scissors = 3;
-
-// Declare a variable via user prompt for user's selection of rock, paper, or scissors
-
-let playerChoice = prompt('Enter One: Rock, Paper, Scissors').toLowerCase();
-// console.log(playerChoice);
-
-const computerChoice = getComputerChoice();
 
 // Create function for the computer to select either rock, paper, or scissors randomly and is case insensitive
 
 function getComputerChoice() {
 
     let choice = Math.floor(Math.random() * 3) +1;
-    // console.log(choice)
+    // console.log(choice)playRound();
  
     switch(choice) {
         case 1:
@@ -34,28 +22,49 @@ function getComputerChoice() {
             return undefined
 
     }
-    return choice;
 }
-// console.log(computerChoice);
 
 // Create a function to play a single round of game using the user and computer choices
 
 function playRound() {
+
+    let playerChoice = prompt('Enter One: Rock, Paper, Scissors').toLowerCase();
+    let computerChoice = getComputerChoice();
+
     if (playerChoice === 'rock' && computerChoice === 'scissors') {
-        let winner = console.log('Player wins!');
+        let playRound = 'player';
+        console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
+        return playRound;
     }
     else if (playerChoice === 'paper' && computerChoice === 'rock') {
-        let winner = console.log('Player wins!');
+        let playRound = 'player';
+        console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
+        return playRound;
     }
     else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-        let winner = console.log('Player wins!');
+        let playRound = 'player';
+        console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
+        return playRound;
     }
     else if (playerChoice === computerChoice) {
-        let winner = console.log('Draw!');
+        let playRound = 'draw';
+        console.log(`Draw! Player: ${playerChoice} Computer: ${computerChoice}`);
+        return playRound;
     }
     else {
-        let winner = console.log('Computer wins!' + " " + computerChoice);
+        let playRound = 'computer';
+        console.log(`Computer wins! Player: ${playerChoice} Computer: ${computerChoice}`);
+        return playRound;
     }
 }
 
+
+
+//playRound(playerChoice, computerChoice);
+
 // Create a function to execute the round 5 times, outputting and tracking the winner and loser of each round
+
+function playGame() {
+    console.log(playRound(playerChoice, computerChoice));
+
+    }
