@@ -31,30 +31,31 @@ function playRound() {
     let playerChoice = prompt('Enter One: Rock, Paper, Scissors').toLowerCase();
     let computerChoice = getComputerChoice();
 
+
     if (playerChoice === 'rock' && computerChoice === 'scissors') {
-        let playRound = 'player';
+        let roundWinner = 'player';
         console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
-        return playRound;
+        return roundWinner;
     }
     else if (playerChoice === 'paper' && computerChoice === 'rock') {
-        let playRound = 'player';
+        let roundWinner = 'player';
         console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
-        return playRound;
+        return roundWinner;
     }
     else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-        let playRound = 'player';
+        let roundWinner = 'player';
         console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
-        return playRound;
+        return roundWinner;
     }
     else if (playerChoice === computerChoice) {
-        let playRound = 'draw';
+        let roundWinner = 'draw';
         console.log(`Draw! Player: ${playerChoice} Computer: ${computerChoice}`);
-        return playRound;
+        return roundWinner;
     }
     else {
-        let playRound = 'computer';
+        let roundWinner = 'computer';
         console.log(`Computer wins! Player: ${playerChoice} Computer: ${computerChoice}`);
-        return playRound;
+        return roundWinner;
     }
 }
 
@@ -62,4 +63,9 @@ function playRound() {
 
 function playGame() {
 
+
+    for (round = 0; round <= 4; round++) {
+
+        console.log(playRound());
+    }
 }
