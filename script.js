@@ -4,8 +4,7 @@
 // Create a game function to play 5 rounds, keeping track of winner and loser
 
 
-const computerChoice = getComputerChoice();
-const playerChoice = getPlayerChoice();
+
 
 
 // Create function for the computer to select either rock, paper, or scissors randomly and is case insensitive
@@ -36,8 +35,10 @@ function getComputerChoice() {
 
 // Create a function to play a single round of game using the user and computer choices
 
-function playRound(playerChoice, computerChoice) {
+function playRound() {
 
+    const computerChoice = getComputerChoice();
+    const playerChoice = getPlayerChoice();
 
     if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
@@ -45,21 +46,26 @@ function playRound(playerChoice, computerChoice) {
 
         console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
 
-        return `Player`
+        return console.log(`Player`);
     }
     else if (playerChoice === computerChoice) {
-        return `Draw`
+    
+        return console.log(`Draw`);
+
     }
     else {
-        return 'Computer'        
+        console.log(`Computer wins! Player: ${playerChoice} Computer: ${computerChoice}`);
+
+        return console.log('Computer');        
     }
 }
 
 // Create a function to execute the round 5 times, outputting and tracking the winner and loser of each round
 
 function playGame(numOfRounds) {
-    for(i = 1; i < numOfRounds; i++) {
-        playRound(playerChoice, computerChoice);
-        return console.log();
+
+    for(i = 0; i < numOfRounds; i++) {
+
+        playRound();
     }
 }
