@@ -16,21 +16,18 @@ rock.addEventListener('click', () => {
     const choice = 'rock'
     console.log('clicked on rock');
     playRound(choice);
-    return 'rock';
 });
 
 paper.addEventListener('click', () => { 
     const choice = 'paper'
     console.log('clicked on paper');
     playRound(choice);
-    return 'paper';
 });
 
 scissors.addEventListener('click', () => { 
     const choice = 'scissors'
     console.log('clicked on scissors');
     playRound(choice);
-    return 'scissors';
 });
 
 
