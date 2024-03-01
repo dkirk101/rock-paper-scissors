@@ -4,7 +4,17 @@
 // Create a game function to play 5 rounds, keeping track of winner and loser
 
 
+const computerChoice = getComputerChoice();
+const playerChoice = getPlayerChoice();
+
+
 // Create function for the computer to select either rock, paper, or scissors randomly and is case insensitive
+
+function getPlayerChoice() {
+    const choice = prompt('Enter One: Rock, Paper, Scissors').toLowerCase();
+    
+    return choice;
+}
 
 function getComputerChoice() {
 
@@ -26,43 +36,30 @@ function getComputerChoice() {
 
 // Create a function to play a single round of game using the user and computer choices
 
-function playRound() {
-
-    const playerChoice = prompt('Enter One: Rock, Paper, Scissors').toLowerCase();
-    const computerChoice = getComputerChoice();
+function playRound(playerChoice, computerChoice) {
 
 
-    if (playerChoice === 'rock' && computerChoice === 'scissors') {
-        let roundWinner = 'player';
+    if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
+        (playerChoice === 'paper' && computerChoice === 'rock') ||
+        (playerChoice === 'scissors' && computerChoice === 'paper')) {
+
         console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
-        return roundWinner;
-    }
-    else if (playerChoice === 'paper' && computerChoice === 'rock') {
-        let roundWinner = 'player';
-        console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
-        return roundWinner;
-    }
-    else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-        let roundWinner = 'player';
-        console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
-        return roundWinner;
+
+        return `Player`
     }
     else if (playerChoice === computerChoice) {
-        let roundWinner = 'draw';
-        console.log(`Draw! Player: ${playerChoice} Computer: ${computerChoice}`);
-        return roundWinner;
+        return `Draw`
     }
     else {
-        let roundWinner = 'computer';
-        console.log(`Computer wins! Player: ${playerChoice} Computer: ${computerChoice}`);
-        return roundWinner;
+        return 'Computer'        
     }
 }
 
 // Create a function to execute the round 5 times, outputting and tracking the winner and loser of each round
 
-function playGame() {
-
-    for (round = 0; round <=4; round++)
-    playRound();
+function playGame(numOfRounds) {
+    for(i = 1; i < numOfRounds; i++) {
+        playRound(playerChoice, computerChoice);
+        return console.log();
+    }
 }
