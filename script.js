@@ -63,24 +63,6 @@ function playRound() {
     }
 }
 
-// Create a function to execute the round 5 times, outputting and tracking the winner and loser of each round
-
-function playGame(numOfRounds) {
-
-    for(i = 0; i < numOfRounds; i++) {
-
-        playRound();
-        console.log(`Round ${i + 1}`);
-        console.log('-------------------------')
-    }
-    checkGameWinner();
-
-    while (i === numOfRounds && playerScore === computerScore){
-        console.log('TIE BREAKER!')
-        playRound();
-    }
-}
-
 function checkGameWinner() {
     if (playerScore > computerScore ) {
         console.log(`Player Wins! ${playerScore} to ${computerScore}`)
