@@ -8,13 +8,31 @@ let playerScore = 0;
 let computerScore = 0;
 let drawScore = 0;
 
-// Create function for the computer to select either rock, paper, or scissors randomly and is case insensitive
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 
-function getPlayerChoice() {
-    const choice = prompt('Enter One: Rock, Paper, Scissors').toLowerCase();
-    
-    return choice;
-}
+rock.addEventListener('click', () => { 
+    const choice = 'rock'
+    console.log('clicked on rock');
+    playRound(choice);
+    return 'rock';
+});
+
+paper.addEventListener('click', () => { 
+    const choice = 'paper'
+    console.log('clicked on paper');
+    playRound(choice);
+    return 'paper';
+});
+
+scissors.addEventListener('click', () => { 
+    const choice = 'scissors'
+    console.log('clicked on scissors');
+    playRound(choice);
+    return 'scissors';
+});
+
 
 function getComputerChoice() {
 
@@ -36,10 +54,9 @@ function getComputerChoice() {
 
 // Create a function to play a single round of game using the user and computer choices
 
-function playRound() {
+function playRound(playerChoice) {
 
     const computerChoice = getComputerChoice();
-    const playerChoice = getPlayerChoice();
 
     if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
