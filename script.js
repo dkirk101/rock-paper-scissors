@@ -4,8 +4,9 @@
 // Create a game function to play 5 rounds, keeping track of winner and loser
 
 
-
-
+let playerScore = 0;
+let computerScore = 0;
+let drawScore = 0;
 
 // Create function for the computer to select either rock, paper, or scissors randomly and is case insensitive
 
@@ -45,18 +46,20 @@ function playRound() {
         (playerChoice === 'scissors' && computerChoice === 'paper')) {
 
         console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
-
-        return console.log(`Player`);
+        playerScore++;
+        return 'Player';
     }
     else if (playerChoice === computerChoice) {
-    
-        return console.log(`Draw`);
+
+        console.log(`No one wins! Player: ${playerChoice} Computer: ${computerChoice}`);
+        drawScore++;
+        return `Draw`;
 
     }
     else {
         console.log(`Computer wins! Player: ${playerChoice} Computer: ${computerChoice}`);
-
-        return console.log('Computer');        
+        computerScore++;
+        return 'Computer';        
     }
 }
 
@@ -67,5 +70,27 @@ function playGame(numOfRounds) {
     for(i = 0; i < numOfRounds; i++) {
 
         playRound();
+        console.log(`Round ${i + 1}`);
+        console.log('-------------------------')
+    }
+    checkGameWinner();
+
+    while (i === numOfRounds && playerScore === computerScore){
+        console.log('TIE BREAKER!')
+        playRound();
+    }
+}
+
+function checkGameWinner() {
+    if (playerScore > computerScore ) {
+        console.log(`Player Wins! ${playerScore} to ${computerScore}`)
+    }
+    else if (computerScore > playerScore) {
+            
+            console.log(`Computer Wins! ${computerScore} to ${playerScore}`)
+    }
+    else {
+        console.log(`No one wins! It's a Draw! ${computerScore} to ${playerScore}`)
+        console.log('-------------------------')
     }
 }
