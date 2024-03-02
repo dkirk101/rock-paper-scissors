@@ -61,20 +61,22 @@ function playRound(playerChoice) {
 
         console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
         playerScore++;
-        return 'Player';
+        scoreRound(playerChoice, computerChoice);
     }
     else if (playerChoice === computerChoice) {
 
         console.log(`No one wins! Player: ${playerChoice} Computer: ${computerChoice}`);
         drawScore++;
-        return `Draw`;
+        scoreRound(playerChoice, computerChoice);
 
     }
     else {
         console.log(`Computer wins! Player: ${playerChoice} Computer: ${computerChoice}`);
+        
         computerScore++;
-        return 'Computer';        
+        scoreRound(playerChoice, computerChoice);        
     }
+
 }
 
 function checkGameWinner() {
@@ -89,4 +91,20 @@ function checkGameWinner() {
         console.log(`No one wins! It's a Draw! ${computerScore} to ${playerScore}`)
         console.log('-------------------------')
     }
+}
+
+function scoreRound(playerChoice, computerChoice) {
+
+    const playerScoreItem = document.querySelector('.playerscore');
+    const computerScoreItem = document.querySelector('.computerscore');
+
+    const paraPlayer = document.createElement('p');
+    const paraComputer = document.createElement('p');
+
+    paraPlayer.textContent = `${playerScore} - ${playerChoice}`;
+    playerScoreItem.appendChild(paraPlayer);
+    
+    paraComputer.textContent = `${computerChoice} - ${computerScore}`;
+    computerScoreItem.appendChild(paraComputer);
+
 }

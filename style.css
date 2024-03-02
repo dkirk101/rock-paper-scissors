@@ -17,11 +17,11 @@ html, body, html * {
 }
 
 #scissors:hover {
-    font-size: 80px;
+    font-size: 75px;
 }
 
 #scissors {
-    font-size: 75px;
+    font-size: 70px;
 }
 
 ul, li {
@@ -54,4 +54,9 @@ h1 {
     align-items: center;
     font-size: 30px;
     padding-top: 25px;
+}
+
+.playerscorehead, .computerscorehead {
+    display: flex;
+    align-items: center;
 }
