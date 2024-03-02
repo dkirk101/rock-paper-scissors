@@ -11,17 +11,9 @@ html, body, html * {
     font-size: 60px;
 }
 
-#rock:hover, #paper:hover {
+#rock:hover, #paper:hover, #scissors:hover {
     font-size: 65px;
     transition-duration: 10ms;
-}
-
-#scissors:hover {
-    font-size: 75px;
-}
-
-#scissors {
-    font-size: 70px;
 }
 
 ul, li {
