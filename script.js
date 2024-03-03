@@ -94,6 +94,7 @@ function checkGameWinner() {
         gameWinner = 'Player';
         winnerItem = document.createElement('p');
         winnerItem.setAttribute("class", "winnerannouncer");
+        winnerItem.style.color ='green';
         winnerItem.textContent = `${gameWinner} Wins the Game!`;
         winnerAnnouncement.prepend(winnerItem);
 
@@ -102,6 +103,7 @@ function checkGameWinner() {
         gameWinner = 'Computer';
         winnerItem = document.createElement('p');
         winnerItem.setAttribute("class", "winnerannouncer");
+        winnerItem.style.color ='Red';
         winnerItem.textContent = `${gameWinner} Wins the Game!`;
         winnerAnnouncement.prepend(winnerItem);
 
