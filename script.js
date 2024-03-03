@@ -103,6 +103,7 @@ function checkGameWinner() {
         winnerItem.textContent = `${gameWinner} Wins the Game!`;
         winnerAnnouncement.prepend(winnerItem);
 }
+}
 
 function trackRound(playerChoice, computerChoice) {
 
