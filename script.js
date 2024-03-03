@@ -18,19 +18,16 @@ const scissors = document.querySelector('#scissors');
 
 rock.addEventListener('click', () => { 
     const choice = 'rock'
-    console.log('clicked on rock');
     playRound(choice);
 });
 
 paper.addEventListener('click', () => { 
     const choice = 'paper'
-    console.log('clicked on paper');
     playRound(choice);
 });
 
 scissors.addEventListener('click', () => { 
     const choice = 'scissors'
-    console.log('clicked on scissors');
     playRound(choice);
 });
 
@@ -38,7 +35,6 @@ scissors.addEventListener('click', () => {
 function getComputerChoice() {
 
     let choice = Math.floor(Math.random() * 3) +1;
-    // console.log(choice)playRound();
  
     switch(choice) {
         case 1:
@@ -106,11 +102,6 @@ function checkGameWinner() {
         winnerItem.style.color ='Red';
         winnerItem.textContent = `${gameWinner} Wins the Game!`;
         winnerAnnouncement.prepend(winnerItem);
-
-    }
-    else {
-        console.log('No winner yet');
-    }
 }
 
 function trackRound(playerChoice, computerChoice) {
