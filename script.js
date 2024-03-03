@@ -9,6 +9,9 @@ let computerScore = 0;
 let drawScore = 0;
 let roundNumber = 1;
 
+const playerScoreUI = document. querySelector('#playerscoretotal')
+const computerScoreUI = document. querySelector('#computerscoretotal')
+
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
@@ -62,6 +65,7 @@ function playRound(playerChoice) {
 
         console.log(`Player wins! Player: ${playerChoice} Computer: ${computerChoice}`);
         playerScore++;
+        playerScoreUI.textContent = playerScore;
     }
     else if (playerChoice === computerChoice) {
 
@@ -73,7 +77,7 @@ function playRound(playerChoice) {
         console.log(`Computer wins! Player: ${playerChoice} Computer: ${computerChoice}`);
         
         computerScore++;
-        
+        computerScoreUI.textContent = computerScore;
     }
     
     scoreRound(playerChoice, computerChoice);
@@ -105,15 +109,13 @@ function scoreRound(playerChoice, computerChoice) {
     const paraRound = document.createElement('p');
     const paraComputer = document.createElement('p');
     
-    paraPlayer.textContent = `${playerScore} - ${playerChoice}`;
+    paraPlayer.textContent = playerChoice;
     playerScoreItem.prepend(paraPlayer);
     
-    paraRound.textContent = `ROUND - ${roundNumber}`;
+    paraRound.textContent = `ROUND ${roundNumber}`;
     roundNum.prepend(paraRound);
      
-    paraComputer.textContent = `${computerChoice} - ${computerScore}`;
+    paraComputer.textContent = computerChoice;
     computerScoreItem.prepend(paraComputer);
         
-}  
-
-
+}
