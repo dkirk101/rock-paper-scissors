@@ -80,7 +80,7 @@ function playRound(playerChoice) {
         computerScoreUI.textContent = computerScore;
     }
     
-    scoreRound(playerChoice, computerChoice);
+    trackRound(playerChoice, computerChoice);
     roundNumber++;
 
 }
@@ -99,7 +99,7 @@ function checkGameWinner() {
     }
 }
 
-function scoreRound(playerChoice, computerChoice) {
+function trackRound(playerChoice, computerChoice) {
 
     const playerScoreItem = document.querySelector('.playerscore');
     const roundNum = document.querySelector('.roundnumber')
