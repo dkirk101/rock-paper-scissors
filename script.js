@@ -7,7 +7,7 @@
 let playerScore = 0;
 let computerScore = 0;
 let drawScore = 0;
-let roundNumber = 1;
+let roundNumber = 0;
 
 const playerScoreUI = document. querySelector('#playerscoretotal')
 const computerScoreUI = document. querySelector('#computerscoretotal')
@@ -80,22 +80,32 @@ function playRound(playerChoice) {
         computerScoreUI.textContent = computerScore;
     }
     
-    trackRound(playerChoice, computerChoice);
     roundNumber++;
+    trackRound(playerChoice, computerChoice);
+    checkGameWinner();
 
 }
 
 function checkGameWinner() {
-    if (playerScore > computerScore ) {
-        console.log(`Player Wins! ${playerScore} to ${computerScore}`)
+    
+    const winnerAnnouncement = document.querySelector('.scoreboard')
+
+    if (playerScore === 5) {
+        gameWinner = 'Player';
+        winnerItem = document.createElement('p');
+        winnerItem.textContent = `${gameWinner} Wins the Game!`
+        winnerAnnouncement.prepend(winnerItem);
+
     }
-    else if (computerScore > playerScore) {
-            
-            console.log(`Computer Wins! ${computerScore} to ${playerScore}`)
+    else if (computerScore === 5) {
+        gameWinner = 'Computer';
+        winnerItem = document.createElement('p');
+        winnerItem.textContent = `${gameWinner} Wins the Game!`
+        winnerAnnouncement.prepend(winnerItem);
+
     }
     else {
-        console.log(`No one wins! It's a Draw! ${computerScore} to ${playerScore}`)
-        console.log('-------------------------')
+        console.log('No winner yet');
     }
 }
 
