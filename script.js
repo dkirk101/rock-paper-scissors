@@ -93,14 +93,16 @@ function checkGameWinner() {
     if (playerScore === 5) {
         gameWinner = 'Player';
         winnerItem = document.createElement('p');
-        winnerItem.textContent = `${gameWinner} Wins the Game!`
+        winnerItem.setAttribute("class", "winnerannouncer");
+        winnerItem.textContent = `${gameWinner} Wins the Game!`;
         winnerAnnouncement.prepend(winnerItem);
 
     }
     else if (computerScore === 5) {
         gameWinner = 'Computer';
         winnerItem = document.createElement('p');
-        winnerItem.textContent = `${gameWinner} Wins the Game!`
+        winnerItem.setAttribute("class", "winnerannouncer");
+        winnerItem.textContent = `${gameWinner} Wins the Game!`;
         winnerAnnouncement.prepend(winnerItem);
 
     }
