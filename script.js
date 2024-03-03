@@ -7,6 +7,7 @@
 let playerScore = 0;
 let computerScore = 0;
 let drawScore = 0;
+let roundNumber = 1;
 
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
@@ -76,6 +77,7 @@ function playRound(playerChoice) {
     }
     
     scoreRound(playerChoice, computerChoice);
+    roundNumber++;
 
 }
 
@@ -96,20 +98,22 @@ function checkGameWinner() {
 function scoreRound(playerChoice, computerChoice) {
 
     const playerScoreItem = document.querySelector('.playerscore');
+    const roundNum = document.querySelector('.roundnumber')
     const computerScoreItem = document.querySelector('.computerscore');
-
+    
     const paraPlayer = document.createElement('p');
+    const paraRound = document.createElement('p');
     const paraComputer = document.createElement('p');
-
+    
     paraPlayer.textContent = `${playerScore} - ${playerChoice}`;
     playerScoreItem.prepend(paraPlayer);
     
+    paraRound.textContent = `ROUND - ${roundNumber}`;
+    roundNum.prepend(paraRound);
+     
     paraComputer.textContent = `${computerChoice} - ${computerScore}`;
     computerScoreItem.prepend(paraComputer);
-
-    paraPlayerScoreTotal1 = document.createElement('p');
-    paraPlayerScoreTotal1.textContent =`${playerScore}`;
-    
-}   
+        
+}  
 
 
