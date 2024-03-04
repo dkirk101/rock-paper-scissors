@@ -9,8 +9,8 @@ let computerScore = 0;
 let drawScore = 0;
 let roundNumber = 0;
 
-const playerScoreUI = document. querySelector('#playerscoretotal')
-const computerScoreUI = document. querySelector('#computerscoretotal')
+const playerScoreUI = document.querySelector('#playerscoretotal')
+const computerScoreUI = document.querySelector('#computerscoretotal')
 
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
